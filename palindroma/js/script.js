@@ -17,7 +17,6 @@ function palindroma(parolaDritta, parolaRovescia){
 
 //dichiaro le variabili che mi interessano
 let word = prompt("Inserisci una parola");
-let wordStraight = "";
 let wordReverse = "";
 
 
