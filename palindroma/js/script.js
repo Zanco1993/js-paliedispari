@@ -20,13 +20,8 @@ let word = prompt("Inserisci una parola");
 let wordStraight = "";
 let wordReverse = "";
 
-// chiedo al for di stamparmi tutti i caratteri della parola
 
-for(let i = 0; i < word.length; i++){
-    wordStraight += word[i];
-}
-
-console.log(wordStraight);
+console.log(word)
 
 // chiedo al for di restituirmi i caratteri rovesciati della parola
 
@@ -38,6 +33,6 @@ console.log(wordReverse);
 
 //richiamo la funzione creata in precedenza che mi andrà a dire
 // se la parola è Palindroma oppure no
-palindroma(wordStraight, wordReverse);
+palindroma(word, wordReverse);
 
 
