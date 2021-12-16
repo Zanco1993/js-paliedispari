@@ -15,7 +15,7 @@ function pari(sommaNumeri){
         console.log("Complimenti la somma è PARI quindi hai vinto!!!");
     } else {
         console.log(`Non sei stato fortunato, la macchina ha vinto!!!`);
-}
+    }
 }
 
 function dispari(sommaNumeri){
@@ -23,34 +23,40 @@ function dispari(sommaNumeri){
         console.log("Non sei stato fortunato, la macchina ha vinto!!!");
     } else {
     console.log("Complimenti la somma è DISPARI quindi hai vinto!!!");
-}
+    }
 }
 
 
 const choosePariDispari = prompt("Inserisci la tua scelta: Pari o Dispari?");
-console.log(`L'utente ha scelto ${choosePariDispari}`);
 
 const numUser = parseInt(prompt("Inserisci un numero da  1 a 5"));
 
 // verifico che l'utente digiti un numero positivo tra 1 e 5
 // voglio escludere i negativi, lo 0 ed i numeri maggiori di 5
-if (numUser < 1 || numUser > 5) {
-    console.log("Il numero inserito è maggiore di 5. RITENTA!!!")
-} 
+// verifico inoltre che siano digitate le parole PARI o DISPARI
 
-console.log(`Il numero inserito dall'utente è ${numUser}`);
-const numMachine = number(1, 5);
-console.log(`Il numero inserito dalla macchina casualmente è ${numMachine}`);
+if ((numUser > 1 && numUser < 5) && (choosePariDispari.toLowerCase() === "pari" || choosePariDispari.toLowerCase() === "dispari")) {
+    console.log(`L'utente ha scelto ${choosePariDispari}`);
+    console.log(`Il numero inserito dall'utente è ${numUser}`);
+    console.log("I dati sono corretti per la valutazione!!!");
+    const numMachine = number(1, 5);
+    console.log(`Il numero inserito dalla macchina casualmente è ${numMachine}`);
 
-let sumNumber = numUser + numMachine;
-console.log(`La somma dei numeri inseriti è ${sumNumber}`);
+    let sumNumber = numUser + numMachine;
+    console.log(`La somma dei numeri inseriti è ${sumNumber}`);
+    // se pari esegui la funzione del pari 
+    if (choosePariDispari.toLowerCase() === "pari") {
+        pari(sumNumber);
+    // se dispari esegui la funzione del dispari
+    } else if (choosePariDispari.toLowerCase() === "dispari") { 
+        dispari(sumNumber);
+    // dai un messaggio di errore
+    } else {
+        console.log("HAI SBAGLIATO AD INSERIRE I DATI!!! RITENTA!!!");
+    }
+    
 
-
-if (choosePariDispari.toLowerCase() === "pari") {
-    pari(sumNumber);
-} else if (choosePariDispari.toLowerCase() === "dispari") { 
-    dispari(sumNumber);
 } else {
-    console.log("HAI SBAGLIATO AD INSERIRE I DATI!!! RITENTA!!!");
+    console.log("I dati inseriti non sono validi!!! RITENTARE");
 }
 
