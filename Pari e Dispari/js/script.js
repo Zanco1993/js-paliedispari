@@ -10,12 +10,20 @@ function number(min, max){
     return result;
 }
 
-function pariDispari(sommaNumeri){
+function pari(sommaNumeri){
     if (sommaNumeri % 2 === 0) {
-        console.log("La somma è PARI");
+        console.log("Complimenti la somma è PARI quindi hai vinto!!!");
     } else {
-        console.log("La somma è DISPARI");
-    }
+        console.log(`Non sei stato fortunato, la macchina ha vinto!!!`);
+}
+}
+
+function dispari(sommaNumeri){
+    if (sommaNumeri % 2 === 0) {
+        console.log("Non sei stato fortunato, la macchina ha vinto!!!");
+    } else {
+    console.log("Complimenti la somma è DISPARI quindi hai vinto!!!");
+}
 }
 
 
@@ -37,13 +45,12 @@ console.log(`Il numero inserito dalla macchina casualmente è ${numMachine}`);
 let sumNumber = numUser + numMachine;
 console.log(`La somma dei numeri inseriti è ${sumNumber}`);
 
-if (choosePariDispari.toLowerCase() === "pari" && sumNumber % 2 === 0) {
-    console.log("L'utente ha vinto!!!")
-} else if (choosePariDispari.toLowerCase() === "dispari" && sumNumber % 2 === 0) {
-    console.log("La macchina ha vinto!!!")
-    
-} else {
-    console.log("HAI SBAGLIATO AD INSERIRE I DATI!!! RITENTA!!!")
-}
 
+if (choosePariDispari.toLowerCase() === "pari") {
+    pari(sumNumber);
+} else if (choosePariDispari.toLowerCase() === "dispari") { 
+    dispari(sumNumber);
+} else {
+    console.log("HAI SBAGLIATO AD INSERIRE I DATI!!! RITENTA!!!");
+}
 
