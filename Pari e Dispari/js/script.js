@@ -36,9 +36,9 @@ const numUser = parseInt(prompt("Inserisci un numero da  1 a 5"));
 // verifico inoltre che siano digitate le parole PARI o DISPARI
 
 if ((numUser > 1 && numUser < 5) && (choosePariDispari.toLowerCase() === "pari" || choosePariDispari.toLowerCase() === "dispari")) {
+    console.log("I dati sono corretti per la valutazione!!!");
     console.log(`L'utente ha scelto ${choosePariDispari}`);
     console.log(`Il numero inserito dall'utente è ${numUser}`);
-    console.log("I dati sono corretti per la valutazione!!!");
     const numMachine = number(1, 5);
     console.log(`Il numero inserito dalla macchina casualmente è ${numMachine}`);
 
